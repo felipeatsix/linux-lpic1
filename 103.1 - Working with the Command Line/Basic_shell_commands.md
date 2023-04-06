@@ -108,5 +108,5 @@ If a command is not located in any of the locations in `$PATH`, the user must th
     Using `!<string>` executes the last command with the passed string.
 
 - Cleaning history
-    `history -c`
 
+    `history -c`
