@@ -17,6 +17,8 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - exit
 - unset
 - history
+- grep
+- touch
 
 # Environment Variables
 
@@ -110,4 +112,38 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - Cleaning history
 ```bash
     history -c
+```
+
+- Searching for commands in history
+```bash
+    ctrl + R
+```
+
+- List auto completion
+```bash
+    Press TAB key twice
+```
+
+- Command help
+
+Print command documentation
+```bash
+    man <command_name>
+```
+> Note
+    For Built-in commands, use man bash
+
+Find commands using a keyword or phrase found in their short description
+```bash
+    man -k <keyword || phrase>
+```
+
+Find commands using a keyword or phrase found in their short AND long descriptions
+```bash
+    apropos <keyword || phrase>
+```
+
+Returns the description of a given command
+```bash
+    whatis cp
 ```
