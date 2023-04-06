@@ -13,6 +13,8 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - date
 - echo
 - type
+- cat
+- exit
 
 # Environment Variables
 
@@ -38,8 +40,10 @@ If a command is not located in any of the locations in `$PATH`, the user must th
     env
 ```
 
-- NOTE:
+> NOTE:
     Use command `type` with `set` and `env` and notice how "set" is a builtin command and "env" is an external command.
+
+
 
 # Demonstration
 
