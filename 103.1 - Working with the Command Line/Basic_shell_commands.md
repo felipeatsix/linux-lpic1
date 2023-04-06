@@ -94,7 +94,7 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 
 - Executing multiple commands
 
-```
     Using `&&` (and) operator
-    `ls -l && date`
+```
+    ls -l && date
 ```
