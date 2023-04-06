@@ -52,19 +52,29 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - Some important environment variables
 
 ```
-    HISTFFILE = Stores the file location of the history command line execution.
+    HISTFFILE (Stores the file location of the history command line execution)
 
-    LOGNAME = Logged user in the current session.
+    HISTFILESIZE
 
-    PATH = Stores external binaries locations so that they can be recognized by the command line without having to use absolute path.
+    LOGNAME (Logged user in the current session)
 
-    PWD = Current directory
+    PATH (Stores external binaries locations so that they can be recognized by the command line without having to use absolute path)
 
-    SHELL = Shell type being used
+    PWD (Current directory)
 
-    TERM = Defines the terminal type
+    OLDPWD (Previous directory)
 
-    USER = Current user name
+    SHELL (Shell type being used)
+
+    TERM (Defines the terminal type)
+
+    USER (Current user name)
+
+    DISPLAY
+
+    PS1 = Shell prompt appearence
+
+
 ```
 > Note
     Use `echo` to see environment variables values, e.g: echo $USER
@@ -76,4 +86,15 @@ If a command is not located in any of the locations in `$PATH`, the user must th
     $! = Returns the last process executed in background
 
     #? = Returns the last process exit code
+
+    ~ = Returns current user home
+
+    ~<username> = Returns username's home
+```
+
+- Executing multiple commands
+
+```
+    Using `&&` (and) operator
+    `ls -l && date`
 ```
