@@ -95,6 +95,7 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - Executing multiple commands
 
     Using `&&` (and) operator
-```
-    ls -l && date
-```
+    It only executes the second command when the first is successful
+
+    Using `||` (or) operator
+    It only executes the second command when the first is failed.
