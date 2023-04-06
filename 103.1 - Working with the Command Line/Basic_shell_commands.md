@@ -16,6 +16,7 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - cat
 - exit
 - unset
+- history
 
 # Environment Variables
 
@@ -99,3 +100,13 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 
     Using `||` (or) operator
     It only executes the second command when the first is failed.
+
+- Executing commands from the history output
+
+    Using `!!` executes the last used command.
+    Using `!<number>` executes the command in history by its number identifier.
+    Using `!<string>` executes the last command with the passed string.
+
+- Cleaning history
+    `history -c`
+
