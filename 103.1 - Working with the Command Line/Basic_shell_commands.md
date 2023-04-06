@@ -51,35 +51,29 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 
 - Some important environment variables
 
-HISTFFILE = Stores the file location of the history command line execution.
+```
+    HISTFFILE = Stores the file location of the history command line execution.
 
-LOGNAME = Logged user in the current session.
+    LOGNAME = Logged user in the current session.
 
-PATH = Stores external binaries locations so that they can be recognized by the command line without having to use absolute path.
+    PATH = Stores external binaries locations so that they can be recognized by the command line without having to use absolute path.
 
-PWD = Current directory
+    PWD = Current directory
 
-SHELL = Shell type being used
+    SHELL = Shell type being used
 
-TERM = Defines the terminal type
+    TERM = Defines the terminal type
 
-USER = Current user name
-
+    USER = Current user name
+```
 > Note
     Use `echo` to see environment variables values, e.g: echo $USER
 
 - Dynamic variables
+```
+    $$ = Returns current process PID
 
-$$ = Returns current process PID
+    $! = Returns the last process executed in background
 
-$! = Returns the last process executed in background
-
-#? = Returns the last process exit code
-
-# Demonstration
-
-`echo $SHELL`
-This command shows what shell type it is being used.
-
-`type echo`
-It tells if "echo" is a built-in or external (to bash). When type is "hashed" it means it is external and it is cached in memory for being used often.
+    #? = Returns the last process exit code
+```
