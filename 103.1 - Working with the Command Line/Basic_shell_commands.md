@@ -20,6 +20,21 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - grep
 - touch
 
+# Quotting
+
+ "" = Escape all special characters except for: $ (dollar) ` (backtick) / (slash)
+
+ '' = Escape all special characters
+
+ # Escaping single character
+
+ \ = Escape the next character
+ ```bash
+    FELIPE=felipe
+    echo $FELIPE
+    echo \$FELIPE
+ ```
+
 # Environment Variables
 
 - How to define a local environment variable
@@ -42,6 +57,13 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - Print global variables
 ```bash
     env
+```
+
+- Print all directories found in $PATH variable on separated lines
+> Note
+    tr is a command that replaces one character by another
+```bash
+    echo $PATH | tr ':' '\n'
 ```
 
 > NOTE:
@@ -161,4 +183,9 @@ Creating aliases
 List all defined aliases
 ```bash
     alias
+```
+
+Return file location of items found in the PATH variable
+```bash
+    which echo
 ```
