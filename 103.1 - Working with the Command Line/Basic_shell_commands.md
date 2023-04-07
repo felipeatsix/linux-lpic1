@@ -147,3 +147,18 @@ Returns the description of a given command
 ```bash
     whatis cp
 ```
+
+Return system information
+```bash
+    uname
+```
+
+Creating aliases
+```bash
+    alias lt='ls /tmp'
+```
+
+List all defined aliases
+```bash
+    alias
+```
