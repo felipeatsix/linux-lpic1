@@ -283,11 +283,11 @@ Combine two files using an index
 ```bash
     # Consider the files content
 
-    ## File 1 ##
+    ## Names ##
     # 1 Felipe
     # 2 Cicely
 
-    ## File 2 ##
+    ## Height ##
     # 1 1,75
     # 2 1,63
 
