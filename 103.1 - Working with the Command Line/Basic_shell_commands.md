@@ -208,8 +208,7 @@ Return text file content in inverse order
 ```bash
     tac <file name>
 ```
-> Note
-    how "tac" is "cat" in inverse way
+> how "tac" is "cat" in inverse way
 
 Returns a portion of the file content
 ```bash
