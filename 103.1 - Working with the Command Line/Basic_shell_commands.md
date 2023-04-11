@@ -297,3 +297,42 @@ Combine two files using an index
     # 1 Felipe 1,75
     # 2 Cicely 1,63
 ```
+
+Combine two files lines
+```bash
+    paste <file name>
+```
+
+Divide a file into more files
+```bash
+    split -l20 <file name> <new file name> # Creates new files by each 20 lines
+```
+
+Make all letters upper case using `tr` command
+```bash
+    cat <file name> | tr a-z A-Z
+
+    # another way
+    cat <file name> | [:lower:] [:upper:]
+```
+
+Cut portions of text using the `cut` command
+```bash
+    cut -c1-5 <file name> # Returns the first 5 characters of each line
+    cut -c-5 <file name> # Do the same as above.
+    cut -c5- <file name> # Returns characters starting from index 5 of each line
+    cut -c1,2,5 <file name> # Returns index 1, 2 and 5 of each line
+    cut -d" " -f1 <file name> # Set delimiter as "blank space" and return "field 1" of each line
+```
+
+Using `sed` command for replacing words
+```bash
+    sed 's/oldName/newName/' <file name> # Replaces every first ocurrence of 'oldName' in each line
+
+    sed 's/oldName/newName/g' <file name> # Using /g tells the command to change all ocurrences of 'oldName' on each line.
+
+    sed '3,5 d' <file name> # Deletes lines from 3 to line 5
+
+    sed '/name/d' <file name> # Deletes the whole line that contains the word 'name'
+```
+> The flag '/g' means "global"
