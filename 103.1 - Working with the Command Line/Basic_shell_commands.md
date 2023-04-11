@@ -273,3 +273,27 @@ Enumerates how many ocurrences the same line content has in the file
 ```bash
     cat <file name> | uniq -c
 ```
+
+Returns content in octal dump format
+```bash
+    od <file name>
+```
+
+Combine two files using an index
+```bash
+    # Consider the files content
+
+    ## File 1 ##
+    # 1 Felipe
+    # 2 Cicely
+
+    ## File 2 ##
+    # 1 1,75
+    # 2 1,63
+
+    join <names.txt> <height.txt>
+
+    # output
+    # 1 Felipe 1,75
+    # 2 Cicely 1,63
+```
