@@ -190,7 +190,7 @@ Return file location of items found in the PATH variable
     which echo
 ```
 
-- Text file commands
+# Text file commands
 
 Return text file content
 ```bash
