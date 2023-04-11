@@ -8,17 +8,10 @@ Commands run in the command line are executables, in order for these executables
 
 If a command is not located in any of the locations in `$PATH`, the user must then reference the full path of it.
 
-# Basic commands
-
-- date
-- echo
-- type
-- cat
-- exit
-- unset
-- history
-- grep
-- touch
+# Unzip tgz files
+```bash
+    tar -xf <file name>
+```
 
 # Quotting
 
@@ -216,3 +209,49 @@ Return text file content in inverse order
 > Note
     Note how "tac" is "cat" in inverse way
 
+Returns a portion of the file content
+```bash
+    head <file name>
+
+    # Returns only two first lines
+    head -2 <file name>
+```
+> Note
+    By default it returns first 10 lines
+
+Returns a portion of the file in the inverse order
+```bash
+    tail <file name>
+
+    # Return the last lines and keep watching it
+    tail -f <file name>
+```
+> Note
+    tail -f is a useful command for live logging
+
+Returns paginated content
+```bash
+    less <file name>
+```
+
+While you're navigating through the document you have some navigation options
+```bash
+    # Type "/ <keyword>" to search for keyword in the text file
+    # Type "n" for next keyword ocurrence
+    # Type "N" (capital) for previous keyword ocurrence
+    # Type "spacebar" to jump to next page
+    # "Ctrl + G" shows the file status and details
+    # Type "q" to exit
+```
+
+Read the quantity of lines
+```bash
+    wc <file name>
+    # returns in number = [lines] [words] [characters]
+```
+Optionally you can return only lines or words or characters
+```bash
+    wc -l # Only lines
+    wc -w # Only words
+    wc -c # Only characters
+```
