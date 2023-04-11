@@ -189,3 +189,30 @@ Return file location of items found in the PATH variable
 ```bash
     which echo
 ```
+
+- Text file commands
+
+Return text file content
+```bash
+    cat <file name>
+
+    # Returns content with numbered lines
+    cat -n <file name>
+
+    # Does not enumerate blank lines
+    cat -b <file name>
+
+    # Merge multiple blank lines into only one blank line
+    cat -s <file name>
+
+    # Shows hidden characters (tab, end of lines, etc...)
+    cat -A <file name>
+```
+
+Return text file content in inverse order
+```bash
+    tac <file name>
+```
+> Note
+    Note how "tac" is "cat" in inverse way
+
