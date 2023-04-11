@@ -93,16 +93,16 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 > Use `echo` to see environment variables values, e.g: echo $USER
 
 - Dynamic variables
-```
-    $$ = Returns current process PID
+```bash
+    $$ #Returns current process PID
 
-    $! = Returns the last process executed in background
+    $! #Returns the last process executed in background
 
-    #? = Returns the last process exit code
+    \#? #Returns the last process exit code
 
-    ~ = Returns current user home
+    ~ #Returns current user home
 
-    ~<username> = Returns username's home
+    ~<username> #Returns username's home
 ```
 
 - Executing multiple commands
