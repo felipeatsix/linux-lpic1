@@ -258,3 +258,18 @@ Sort by the second field(e.g: last name)
 ```bash
     sort -k2 <file name>
 ```
+
+Returns non duplicated lines from a file
+```bash
+    cat <file name> | uniq
+```
+
+Returns only what's duplicated in the file
+```bash
+    cat <file name> | uniq -d
+```
+
+Enumerates how many ocurrences the same line content has in the file
+```bash
+    cat <file name> | uniq -c
+```
