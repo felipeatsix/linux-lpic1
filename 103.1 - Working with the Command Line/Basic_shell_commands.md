@@ -201,13 +201,15 @@ Return text file content
     # Shows hidden characters (tab, end of lines, etc...)
     cat -A <file name>
 ```
+> Note
+    The command "nl" does the same thing as "cat -b"
 
 Return text file content in inverse order
 ```bash
     tac <file name>
 ```
 > Note
-    Note how "tac" is "cat" in inverse way
+    how "tac" is "cat" in inverse way
 
 Returns a portion of the file content
 ```bash
@@ -249,9 +251,20 @@ Read the quantity of lines
     wc <file name>
     # returns in number = [lines] [words] [characters]
 ```
+
 Optionally you can return only lines or words or characters
 ```bash
     wc -l # Only lines
     wc -w # Only words
     wc -c # Only characters
+```
+
+Sort file alphabetically
+```bash
+    sort <file name>
+```
+
+Sort by the second field(e.g: last name)
+```bash
+    sort -k2 <file name>
 ```
