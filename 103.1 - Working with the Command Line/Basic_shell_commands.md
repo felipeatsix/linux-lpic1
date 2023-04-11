@@ -53,7 +53,7 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 ```
 
 - Print all directories found in $PATH variable on separated lines
-> tr is a command that replaces one character by another
+> `tr` is a command that replaces one character by another
 ```bash
     echo $PATH | tr ':' '\n'
 ```
@@ -67,30 +67,28 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 
 - Some important environment variables
 
-```
-    HISTFFILE (Stores the file location of the history command line execution)
+```bash
+    HISTFFILE #Stores the file location of the history command line execution)
 
     HISTFILESIZE
 
-    LOGNAME (Logged user in the current session)
+    LOGNAME #Logged user in the current session)
 
-    PATH (Stores external binaries locations so that they can be recognized by the command line without having to use absolute path)
+    PATH #Stores external binaries locations so that they can be recognized by the command line without having to use absolute path
 
-    PWD (Current directory)
+    PWD #Current directory
 
-    OLDPWD (Previous directory)
+    OLDPWD #Previous directory
 
-    SHELL (Shell type being used)
+    SHELL #Shell type being used
 
-    TERM (Defines the terminal type)
+    TERM #Defines the terminal type
 
-    USER (Current user name)
+    USER #Current user name
 
     DISPLAY
 
-    PS1 = Shell prompt appearence
-
-
+    PS1 #Shell prompt appearence
 ```
 > Use `echo` to see environment variables values, e.g: echo $USER
 
