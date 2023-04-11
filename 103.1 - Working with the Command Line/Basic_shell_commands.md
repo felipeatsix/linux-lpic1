@@ -53,14 +53,12 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 ```
 
 - Print all directories found in $PATH variable on separated lines
-> Note
-    tr is a command that replaces one character by another
+> tr is a command that replaces one character by another
 ```bash
     echo $PATH | tr ':' '\n'
 ```
 
-> NOTE:
-    Use command `type` with `set` and `env` and notice how "set" is a builtin command and "env" is an external command.
+> Use command `type` with `set` and `env` and notice how "set" is a builtin command and "env" is an external command.
 
 - How to remove environment variable
 ```bash
@@ -94,8 +92,7 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 
 
 ```
-> Note
-    Use `echo` to see environment variables values, e.g: echo $USER
+> Use `echo` to see environment variables values, e.g: echo $USER
 
 - Dynamic variables
 ```
@@ -145,8 +142,7 @@ Print command documentation
 ```bash
     man <command_name>
 ```
-> Note
-    For Built-in commands, use man bash
+> For Built-in commands, use man bash
 
 Find commands using a keyword or phrase found in their short description
 ```bash
@@ -201,14 +197,13 @@ Return text file content
     # Shows hidden characters (tab, end of lines, etc...)
     cat -A <file name>
 ```
-> Note
-    The command "nl" does the same thing as "cat -b"
+> The command "nl" does the same thing as "cat -b"
 
 Return text file content in inverse order
 ```bash
     tac <file name>
 ```
-> how "tac" is "cat" in inverse way
+> Note how "tac" is "cat" in inverse way
 
 Returns a portion of the file content
 ```bash
@@ -217,8 +212,7 @@ Returns a portion of the file content
     # Returns only two first lines
     head -2 <file name>
 ```
-> Note
-    By default it returns first 10 lines
+> By default it returns first 10 lines
 
 Returns a portion of the file in the inverse order
 ```bash
@@ -227,8 +221,7 @@ Returns a portion of the file in the inverse order
     # Return the last lines and keep watching it
     tail -f <file name>
 ```
-> Note
-    tail -f is a useful command for live logging
+> tail -f is a useful command for live logging
 
 Returns paginated content
 ```bash
