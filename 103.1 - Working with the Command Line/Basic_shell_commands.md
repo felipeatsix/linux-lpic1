@@ -68,41 +68,41 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 - Some important environment variables
 
 ```bash
-    HISTFFILE #Stores the file location of the history command line execution)
+    HISTFFILE # Stores the file location of the history command line execution)
 
     HISTFILESIZE
 
-    LOGNAME #Logged user in the current session)
+    LOGNAME # Logged user in the current session)
 
-    PATH #Stores external binaries locations so that they can be recognized by the command line without having to use absolute path
+    PATH # Stores external binaries locations so that they can be recognized by the command line without having to use absolute path
 
-    PWD #Current directory
+    PWD # Current directory
 
-    OLDPWD #Previous directory
+    OLDPWD # Previous directory
 
-    SHELL #Shell type being used
+    SHELL # Shell type being used
 
-    TERM #Defines the terminal type
+    TERM # Defines the terminal type
 
-    USER #Current user name
+    USER # Current user name
 
     DISPLAY
 
-    PS1 #Shell prompt appearence
+    PS1 # Shell prompt appearence
 ```
 > Use `echo` to see environment variables values, e.g: echo $USER
 
 - Dynamic variables
 ```bash
-    $$ #Returns current process PID
+    $$ # Returns current process PID
 
-    $! #Returns the last process executed in background
+    $! # Returns the last process executed in background
 
-    #? #Returns the last process exit code
+    #? # Returns the last process exit code
 
-    ~ #Returns current user home
+    ~ # Returns current user home
 
-    ~<username> #Returns username's home
+    ~<username> # Returns username's home
 ```
 
 - Executing multiple commands
