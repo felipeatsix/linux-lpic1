@@ -249,14 +249,13 @@ Optionally you can return only lines or words or characters
     wc -c # Only characters
 ```
 
-Sort file alphabetically
+Sorting files
 ```bash
-    sort <file name>
-```
+    sort <file name> # Sort file alphabetically
+    sort -k2 <file name> # Sort by the second field(e.g: last name)
+    sort -t ':' -k 2 # Sort by the second field when delimiter is ':'
+    sort -t ':' -k 2n # Sort by the second field when delimiter is ':' and numeric
 
-Sort by the second field(e.g: last name)
-```bash
-    sort -k2 <file name>
 ```
 
 Returns non duplicated lines from a file
@@ -308,12 +307,22 @@ Divide a file into more files
     split -l20 <file name> <new file name> # Creates new files by each 20 lines
 ```
 
-Make all letters upper case using `tr` command
+Replace or delete characters using `tr` command
 ```bash
-    cat <file name> | tr a-z A-Z
+    cat <file name> | tr a-z A-Z # make all upper case Using letter range
+    cat <file name> | tr [:upper:] [:lowercase] # Same as above
+    cat <file name> | tr A E # Replace A by E
+    cat <file name> | tr -d A # Delete all upper case A characters
+    cat <file name> | tr -d [:blank:] # Delete all blank spaces
+    echo "feliiiipe" | tr -s i # Squeeze character "i", e.g: returns "Felipe"
+    cat <file name> | tr ei EI # Every e character will be replace by upper case "E" and every i character will be replaced by upper case "I".
+```
 
-    # another way
-    cat <file name> | [:lower:] [:upper:]
+Converting line termination from Windows (CRLF) to Unix (LF) using `tr` command
+```bash
+    tr -d "\r" < filename.txt > newfile.txt
+    #or
+    cat filename | tr -d "\r" > newfile.txt
 ```
 
 Cut portions of text using the `cut` command
@@ -325,7 +334,7 @@ Cut portions of text using the `cut` command
     cut -d" " -f1 <file name> # Set delimiter as "blank space" and return "field 1" of each line
 ```
 
-Using `sed` command for replacing words
+Using `sed` command for editing text
 ```bash
     sed 's/oldName/newName/' <file name> # Replaces every first ocurrence of 'oldName' in each line
 
@@ -335,4 +344,95 @@ Using `sed` command for replacing words
 
     sed '/name/d' <file name> # Deletes the whole line that contains the word 'name'
 ```
-> The flag '/g' means "global"
+
+Reading compressed files with variantes of the `cat` command
+
+```bash
+    xzcat file.txt.xz
+    bzcat file.txt.bz2
+    zcat file.txt.gz
+```
+
+How to verify file integrity (checksum)
+```bash
+    # <Filename> can be a .txt file that must contain a relation of hash and file name which coincides with the filename being verified that must exist on same folder of the operation.
+    md5sum -c <filename>
+    sha256sum -c <filename>
+    sha512sum -c <filename>
+```
+
+
+# Basic file management - cd, ls, file
+
+## Command cd
+
+Move to another directory
+```bash
+    cd <directory name>
+```
+
+Move one directory before
+```bash
+    cd ..
+```
+
+Move to previous directory
+```bash
+    cd -
+```
+
+Move to home of current login
+```bash
+    cd ~
+```
+
+## Command ls
+
+List files
+```bash
+    ls
+```
+
+List files including hidden files
+```bash
+    ls -a
+```
+
+List files with byte size information
+```bash
+    ls -lh
+```
+
+List files recursively
+```bash
+    ls -lr
+```
+
+List files using a wildcard
+```bash
+    ls <string>*
+```
+
+List files using interrogation mark to replace any character on search
+```bash
+    ls fe?ipe # returns a file or a directory called "felipe" if exists.
+```
+
+List files using a character list
+```bash
+    ls folder[123] # It returns folder1, folder2, folder3, if exists.
+    ls folder[!123] # It won't return folder1, folder2 and folder 3.
+    ls folder[1-3] # Same as the first one, but specifying a range.
+```
+
+List files using string matching
+```bash
+    ls {F,f}older # It will return folder called "folder" or "Folder" if exists.
+```
+
+## Command file
+
+Show file type
+```bash
+    file <file name>
+```
