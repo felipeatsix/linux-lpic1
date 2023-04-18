@@ -105,36 +105,37 @@ If a command is not located in any of the locations in `$PATH`, the user must th
     ~<username> # Returns username's home
 ```
 
-- Executing multiple commands
+# Executing multiple commands
 
-    Using `&&` (and) operator
-    It only executes the second command when the first is successful
+Using `&&` (and) operator
+It only executes the second command when the first is successful
 
-    Using `||` (or) operator
-    It only executes the second command when the first is failed.
+Using `||` (or) operator
+It only executes the second command when the first is failed.
 
-- Executing commands from the history output
+# Executing commands from the history output
 
-    Using `!!` executes the last used command.
-    Using `!<number>` executes the command in history by its number identifier.
-    Using `!<string>` executes the last command with the passed string.
+Using `!!` executes the last used command.
+Using `!<number>` executes the command in history by its number identifier.
+Using `!<string>` executes the last command with the passed string.
 
-- Cleaning history
+Cleaning history
 ```bash
     history -c
 ```
 
-- Searching for commands in history
+Searching for commands in history
 ```bash
     ctrl + R
 ```
 
-- List auto completion
+
+# Command help
+
+List auto completion
 ```bash
     Press TAB key twice
 ```
-
-- Command help
 
 Print command documentation
 ```bash
