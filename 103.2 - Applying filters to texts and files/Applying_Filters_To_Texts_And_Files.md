@@ -1,0 +1,217 @@
+# Applying filters to texts and files
+
+## cat
+Return text file content
+```bash
+    cat <file name>
+
+    # Returns content with numbered lines
+    cat -n <file name>
+
+    # Does not enumerate blank lines
+    cat -b <file name>
+
+    # Merge multiple blank lines into only one blank line
+    cat -s <file name>
+
+    # Shows hidden characters (tab, end of lines, etc...)
+    cat -A <file name>
+```
+> The command `nl` does the same thing as "cat -b"
+
+Returns non duplicated lines from a file
+```bash
+    cat <file name> | uniq
+
+    # Returns only what's duplicated in the file
+    cat <file name> | uniq -d
+
+    # Enumerates how many ocurrences the same line content has in the file
+    cat <file name> | uniq -c
+```
+
+Reading compressed files with variantes of the `cat` command
+```bash
+    xzcat file.txt.xz
+    bzcat file.txt.bz2
+    zcat file.txt.gz
+```
+
+## tac
+Return text file content in inverse order
+```bash
+    tac <file name>
+```
+> Note how "tac" is "cat" in inverse way
+
+## head
+Returns a portion of the file content
+```bash
+    head <file name>
+
+    # Returns only two first lines
+    head -2 <file name>
+```
+> By default it returns first 10 lines
+
+## tail
+Returns a portion of the file in the inverse order
+```bash
+    tail <file name>
+
+    # Return the last lines and keep watching it
+    tail -f <file name>
+```
+> tail -f is a useful command for live logging
+
+## less
+Returns paginated content
+```bash
+    less <file name>
+```
+
+## wc
+Read the quantity of lines, words and characters
+```bash
+    wc <file name>
+
+    # Only lines
+    wc -l
+
+    # Only words
+    wc -w
+
+    # Only characters
+    wc -c
+```
+
+## sort
+Sorting files
+```bash
+    # Sort file alphabetically
+    sort <file name>
+
+    # Sort by the second field(e.g: last name)
+    sort -k2 <file name>
+
+    # Sort by the second field when delimiter is ':'
+    sort -t ':' -k 2
+
+    # Sort by the second field when delimiter is ':' and numeric
+    sort -t ':' -k 2n
+
+```
+
+## od
+Returns content in octal dump format
+```bash
+    od <file name>
+```
+
+## join
+Combine two files using an index
+```bash
+    # Consider the files content
+
+    ## Names ##
+    # 1 Felipe
+    # 2 Cicely
+
+    ## Height ##
+    # 1 1,75
+    # 2 1,63
+
+    join <names.txt> <height.txt>
+
+    # output
+    # 1 Felipe 1,75
+    # 2 Cicely 1,63
+```
+
+## paste
+Combine two files lines
+```bash
+    paste <file name>
+```
+
+## split
+Divide a file into more files
+```bash
+    # Creates new files by each 20 lines
+    split -l20 <file name> <new file name>
+```
+
+## tr
+Replace or delete characters using `tr` command
+```bash
+    # make all upper case Using letter range
+    cat <file name> | tr a-z A-Z
+
+    # Same as above
+    cat <file name> | tr [:upper:] [:lowercase]
+
+    # Replace A by E
+    cat <file name> | tr A E
+
+    # Delete all upper case A characters
+    cat <file name> | tr -d A
+
+    # Delete all blank spaces
+    cat <file name> | tr -d [:blank:]
+
+    # Squeeze character "i", e.g: returns "Felipe"
+    # Every e character will be replace by upper case "E" and every i character will be replaced by upper case "I".
+    echo "feliiiipe" | tr -s i
+    cat <file name> | tr ei EI
+```
+
+Converting line termination from Windows (CRLF) to Unix (LF) using `tr` command
+```bash
+    tr -d "\r" < filename.txt > newfile.txt
+    #or
+    cat filename | tr -d "\r" > newfile.txt
+```
+
+## cut
+Cut portions of text using the `cut` command
+```bash
+    # Returns the first 5 characters of each line
+    cut -c1-5 <file name>
+
+    # Do the same as above.
+    cut -c-5 <file name>
+
+     # Returns characters starting from index 5 of each line
+    cut -c5- <file name>
+
+    # Returns index 1, 2 and 5 of each line
+    cut -c1,2,5 <file name>
+
+    # Set delimiter as "blank space" and return "field 1" of each line
+    cut -d" " -f1 <file name>
+```
+
+## sed
+Using `sed` command for editing text
+```bash
+    # Replaces every first ocurrence of 'oldName' in each line
+    sed 's/oldName/newName/' <file name>
+
+    # Using /g tells the command to change all ocurrences of 'oldName' on each line.
+    sed 's/oldName/newName/g' <file name>
+
+    # Deletes lines from 3 to line 5
+    sed '3,5 d' <file name>
+
+    # Deletes the whole line that contains the word 'name'
+    sed '/name/d' <file name>
+```
+
+## Checksums - md5sum, sha256sum and sha512sum
+How to verify file integrity (checksum)
+```bash
+    # <Filename> can be a .txt file that must contain a relation of hash and file name which coincides with the filename being verified that must exist on same folder of the operation.
+    md5sum -c <filename>
+    sha256sum -c <filename>
+    sha512sum -c <filename>
+```

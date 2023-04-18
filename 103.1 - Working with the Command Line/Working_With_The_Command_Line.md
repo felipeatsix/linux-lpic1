@@ -1,0 +1,194 @@
+
+# What is shell?
+
+Interface between the user and the operating system resources
+
+# How the system finds and executes commands
+
+Commands run in the command line are executables, in order for these executables to work as recognized commands by the terminal, they need to be part of locations found in the environment variable `$PATH`
+
+If a command is not located in any of the locations in `$PATH`, the user must then reference the full path of it.
+
+# Unzip tgz files
+```bash
+    tar -xf <file name>
+```
+
+# Quotting
+
+ "" = Escape all special characters except for: $ (dollar) ` (backtick) / (slash)
+
+ '' = Escape all special characters
+
+ # Escaping single character
+
+ \ = Escape the next character
+ ```bash
+    FELIPE=felipe
+    echo $FELIPE
+    echo \$FELIPE
+ ```
+
+# Environment Variables
+
+How to define a local environment variable
+
+```bash
+    VARIABLE_NAME=value
+    echo $VARIABLE_NAME
+```
+
+To make environment variable global, use `export` command
+```bash
+    export VARIABLE_NAME
+```
+
+Print all declared variables
+```bash
+    set
+```
+
+Print global variables
+```bash
+    env
+```
+
+Print all directories found in $PATH variable on separated lines
+> `tr` is a command that replaces one character by another
+```bash
+    echo $PATH | tr ':' '\n'
+```
+
+> Use command `type` with `set` and `env` and notice how "set" is a builtin command and "env" is an external command.
+
+How to remove environment variable
+```bash
+    unset VAR_NAME
+```
+
+Some important environment variables
+
+```bash
+    # Stores the file location of the history command line execution)
+    HISTFFILE
+
+    HISTFILESIZE
+
+    # Logged user in the current session)
+    LOGNAME
+
+    # Stores external binaries locations so that they can be recognized by the command line without having to use absolute path
+    PATH
+
+    # Current directory
+    PWD
+
+    # Previous directory
+    OLDPWD
+
+    # Shell type being used
+    SHELL
+
+    # Defines the terminal type
+    TERM
+
+    # Current user name
+    USER
+
+    DISPLAY
+
+    # Shell prompt appearence
+    PS1
+```
+> Use `echo` to see environment variables values, e.g: echo $USER
+
+- Dynamic variables
+```bash
+    # Returns current process PID
+    $$
+
+    # Returns the last process executed in background
+    $!
+
+    # Returns the last process exit code
+    #?
+
+    # Returns current user home
+    ~
+
+    # Returns username's home
+    ~<username>
+```
+
+# Executing multiple commands
+
+Using `&&` (and) operator
+It only executes the second command when the first is successful
+
+Using `||` (or) operator
+It only executes the second command when the first is failed.
+
+# Executing commands from the history output
+
+Using `!!` executes the last used command.
+Using `!<number>` executes the command in history by its number identifier.
+Using `!<string>` executes the last command with the passed string.
+
+Cleaning history
+```bash
+    history -c
+```
+
+Searching for commands in history
+```bash
+    ctrl + R
+```
+
+
+# Command help
+
+List auto completion
+```bash
+    Press TAB key twice
+```
+
+Print command documentation
+```bash
+    man <command_name>
+```
+> For Built-in commands, use man bash
+
+Find commands using a keyword or phrase found in their short description
+```bash
+    man -k <keyword || phrase>
+```
+
+Find commands using a keyword or phrase found in their short AND long descriptions
+```bash
+    apropos <keyword || phrase>
+```
+
+Returns the description of a given command
+```bash
+    whatis cp
+```
+
+Return system information
+```bash
+    uname
+```
+
+Creating aliases
+```bash
+    alias lt='ls /tmp'
+```
+
+List all defined aliases
+```bash
+    alias
+```
+
+Return file location of items found in the PATH variable
+```bash
+    which echo
+```
