@@ -30,29 +30,29 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 
 # Environment Variables
 
-- How to define a local environment variable
+How to define a local environment variable
 
 ```bash
     VARIABLE_NAME=value
     echo $VARIABLE_NAME
 ```
 
-- To make environment variable global, use `export` command
+To make environment variable global, use `export` command
 ```bash
     export VARIABLE_NAME
 ```
 
-- Print all declared variables
+Print all declared variables
 ```bash
     set
 ```
 
-- Print global variables
+Print global variables
 ```bash
     env
 ```
 
-- Print all directories found in $PATH variable on separated lines
+Print all directories found in $PATH variable on separated lines
 > `tr` is a command that replaces one character by another
 ```bash
     echo $PATH | tr ':' '\n'
@@ -60,12 +60,12 @@ If a command is not located in any of the locations in `$PATH`, the user must th
 
 > Use command `type` with `set` and `env` and notice how "set" is a builtin command and "env" is an external command.
 
-- How to remove environment variable
+How to remove environment variable
 ```bash
     unset VAR_NAME
 ```
 
-- Some important environment variables
+Some important environment variables
 
 ```bash
     HISTFFILE # Stores the file location of the history command line execution)
