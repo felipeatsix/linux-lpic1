@@ -241,18 +241,29 @@ Read the quantity of lines, words and characters
 ```bash
     wc <file name>
 
-    # Optionally you can return only lines or words or characters
-    wc -l # Only lines
-    wc -w # Only words
-    wc -c # Only characters
+    # Only lines
+    wc -l
+
+    # Only words
+    wc -w
+
+    # Only characters
+    wc -c
 ```
 
 Sorting files
 ```bash
-    sort <file name> # Sort file alphabetically
-    sort -k2 <file name> # Sort by the second field(e.g: last name)
-    sort -t ':' -k 2 # Sort by the second field when delimiter is ':'
-    sort -t ':' -k 2n # Sort by the second field when delimiter is ':' and numeric
+    # Sort file alphabetically
+    sort <file name>
+
+    # Sort by the second field(e.g: last name)
+    sort -k2 <file name>
+
+    # Sort by the second field when delimiter is ':'
+    sort -t ':' -k 2
+
+    # Sort by the second field when delimiter is ':' and numeric
+    sort -t ':' -k 2n
 
 ```
 
