@@ -1,3 +1,4 @@
+
 # What is shell?
 
 Interface between the user and the operating system resources
@@ -68,41 +69,55 @@ How to remove environment variable
 Some important environment variables
 
 ```bash
-    HISTFFILE # Stores the file location of the history command line execution)
+    # Stores the file location of the history command line execution)
+    HISTFFILE
 
     HISTFILESIZE
 
-    LOGNAME # Logged user in the current session)
+    # Logged user in the current session)
+    LOGNAME
 
-    PATH # Stores external binaries locations so that they can be recognized by the command line without having to use absolute path
+    # Stores external binaries locations so that they can be recognized by the command line without having to use absolute path
+    PATH
 
-    PWD # Current directory
+    # Current directory
+    PWD
 
-    OLDPWD # Previous directory
+    # Previous directory
+    OLDPWD
 
-    SHELL # Shell type being used
+    # Shell type being used
+    SHELL
 
-    TERM # Defines the terminal type
+    # Defines the terminal type
+    TERM
 
-    USER # Current user name
+    # Current user name
+    USER
 
     DISPLAY
 
-    PS1 # Shell prompt appearence
+    # Shell prompt appearence
+    PS1
 ```
 > Use `echo` to see environment variables values, e.g: echo $USER
 
 - Dynamic variables
 ```bash
-    $$ # Returns current process PID
+    # Returns current process PID
+    $$
 
-    $! # Returns the last process executed in background
+    # Returns the last process executed in background
+    $!
 
-    #? # Returns the last process exit code
+    # Returns the last process exit code
+    #?
 
-    ~ # Returns current user home
+    # Returns current user home
+    ~
 
-    ~<username> # Returns username's home
+    # Returns username's home
+    ~<username>
 ```
 
 # Executing multiple commands
@@ -445,19 +460,26 @@ List files using a wildcard
 
 List files using interrogation mark to replace any character on search
 ```bash
-    ls fe?ipe # returns a file or a directory called "felipe" if exists.
+    # returns a file or a directory called "felipe" if exists.
+    ls fe?ipe
 ```
 
 List files using a character list
 ```bash
-    ls folder[123] # It returns folder1, folder2, folder3, if exists.
-    ls folder[!123] # It won't return folder1, folder2 and folder 3.
-    ls folder[1-3] # Same as the first one, but specifying a range.
+    # It returns folder1, folder2, folder3, if exists.
+    ls folder[123]
+
+    # It won't return folder1, folder2 and folder 3.
+    ls folder[!123]
+
+    # Same as the first one, but specifying a range.
+    ls folder[1-3]
 ```
 
 List files using string matching
 ```bash
-    ls {F,f}older # It will return folder called "folder" or "Folder" if exists.
+    # It will return folder called "folder" or "Folder" if exists.
+    ls {F,f}older
 ```
 
 ## Command file
