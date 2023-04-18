@@ -237,14 +237,11 @@ While you're navigating through the document you have some navigation options
     # Type "q" to exit
 ```
 
-Read the quantity of lines
+Read the quantity of lines, words and characters
 ```bash
     wc <file name>
-    # returns in number = [lines] [words] [characters]
-```
 
-Optionally you can return only lines or words or characters
-```bash
+    # Optionally you can return only lines or words or characters
     wc -l # Only lines
     wc -w # Only words
     wc -c # Only characters
@@ -262,15 +259,11 @@ Sorting files
 Returns non duplicated lines from a file
 ```bash
     cat <file name> | uniq
-```
 
-Returns only what's duplicated in the file
-```bash
+    # Returns only what's duplicated in the file
     cat <file name> | uniq -d
-```
 
-Enumerates how many ocurrences the same line content has in the file
-```bash
+    # Enumerates how many ocurrences the same line content has in the file
     cat <file name> | uniq -c
 ```
 
@@ -310,13 +303,25 @@ Divide a file into more files
 
 Replace or delete characters using `tr` command
 ```bash
-    cat <file name> | tr a-z A-Z # make all upper case Using letter range
-    cat <file name> | tr [:upper:] [:lowercase] # Same as above
-    cat <file name> | tr A E # Replace A by E
-    cat <file name> | tr -d A # Delete all upper case A characters
-    cat <file name> | tr -d [:blank:] # Delete all blank spaces
-    echo "feliiiipe" | tr -s i # Squeeze character "i", e.g: returns "Felipe"
-    cat <file name> | tr ei EI # Every e character will be replace by upper case "E" and every i character will be replaced by upper case "I".
+    # make all upper case Using letter range
+    cat <file name> | tr a-z A-Z
+
+    # Same as above
+    cat <file name> | tr [:upper:] [:lowercase]
+
+    # Replace A by E
+    cat <file name> | tr A E
+
+    # Delete all upper case A characters
+    cat <file name> | tr -d A
+
+    # Delete all blank spaces
+    cat <file name> | tr -d [:blank:]
+
+    # Squeeze character "i", e.g: returns "Felipe"
+    # Every e character will be replace by upper case "E" and every i character will be replaced by upper case "I".
+    echo "feliiiipe" | tr -s i
+    cat <file name> | tr ei EI
 ```
 
 Converting line termination from Windows (CRLF) to Unix (LF) using `tr` command
@@ -328,22 +333,35 @@ Converting line termination from Windows (CRLF) to Unix (LF) using `tr` command
 
 Cut portions of text using the `cut` command
 ```bash
-    cut -c1-5 <file name> # Returns the first 5 characters of each line
-    cut -c-5 <file name> # Do the same as above.
-    cut -c5- <file name> # Returns characters starting from index 5 of each line
-    cut -c1,2,5 <file name> # Returns index 1, 2 and 5 of each line
-    cut -d" " -f1 <file name> # Set delimiter as "blank space" and return "field 1" of each line
+    # Returns the first 5 characters of each line
+    cut -c1-5 <file name>
+
+    # Do the same as above.
+    cut -c-5 <file name>
+
+     # Returns characters starting from index 5 of each line
+    cut -c5- <file name>
+
+    # Returns index 1, 2 and 5 of each line
+    cut -c1,2,5 <file name>
+
+    # Set delimiter as "blank space" and return "field 1" of each line
+    cut -d" " -f1 <file name>
 ```
 
 Using `sed` command for editing text
 ```bash
-    sed 's/oldName/newName/' <file name> # Replaces every first ocurrence of 'oldName' in each line
+    # Replaces every first ocurrence of 'oldName' in each line
+    sed 's/oldName/newName/' <file name>
 
-    sed 's/oldName/newName/g' <file name> # Using /g tells the command to change all ocurrences of 'oldName' on each line.
+    # Using /g tells the command to change all ocurrences of 'oldName' on each line.
+    sed 's/oldName/newName/g' <file name>
 
-    sed '3,5 d' <file name> # Deletes lines from 3 to line 5
+    # Deletes lines from 3 to line 5
+    sed '3,5 d' <file name>
 
-    sed '/name/d' <file name> # Deletes the whole line that contains the word 'name'
+    # Deletes the whole line that contains the word 'name'
+    sed '/name/d' <file name>
 ```
 
 Reading compressed files with variantes of the `cat` command
