@@ -63,7 +63,7 @@ cat /proc/interrupts
 ### /proc/ioports
 List I/O addresses
 ```bash
-    cat /proc/ioports
+cat /proc/ioports
 ```
 
 ### proc/cpuinfo
